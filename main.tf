@@ -38,7 +38,7 @@ resource "azurerm_resource_group" "rg" {
 
 variable "resource_group_location" {
   type        = string
-  default     = "eastus"
+  default     = "uksouth"
   description = "Location of the resource group."
 }
 
