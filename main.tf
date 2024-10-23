@@ -19,7 +19,6 @@ provider "azurerm" {
 terraform {
   backend "azurerm" {
     resource_group_name  = "gh-tf-storage-rg01"
-    storage_account_name = "rjukstfstgacc01"
     container_name       = "poc1-tfstate"
     key                  = "terraform.tfstate"
   }
