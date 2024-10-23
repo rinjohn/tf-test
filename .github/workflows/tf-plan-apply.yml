@@ -21,6 +21,7 @@ env:
   ARM_TENANT_ID: "${{ secrets.AZURE_TENANT_ID }}"
   ARM_USE_AZUREAD: "true"
   ARM_USE_OIDC: "true"
+  TF_VAR_storage_account_name: ${{ secrets.TF_STORAGE_NAME }}  
 
 jobs:
   terraform-plan:
