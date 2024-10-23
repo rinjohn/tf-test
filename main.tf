@@ -23,7 +23,7 @@ terraform {
     container_name       = "poc1-tfstate"
     key                  = "terraform.tfstate"
     use_oidc             = true
-    use_azuread_auth = true
+    use_azuread_auth     = true
   }
 }
 
