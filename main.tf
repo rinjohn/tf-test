@@ -1,4 +1,6 @@
 terraform {
+  backend "azurerm" {
+  }
   required_providers {
     azurerm = {
       source  = "hashicorp/azurerm"
@@ -8,11 +10,6 @@ terraform {
       source  = "hashicorp/random"
       version = "~>3.0"
     }
-  }
-}
-
-terraform {
-  backend "azurerm" {
   }
 }
 
@@ -38,7 +35,7 @@ variable "resource_group_location" {
 
 variable "resource_group_name_prefix" {
   type        = string
-  default     = "rg"
+  default     = "rgs"
   description = "Prefix of the resource group name combined with a random ID."
 }
 
