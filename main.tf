@@ -1,4 +1,6 @@
 terraform {
+  backend "azurerm" {
+  }
   required_providers {
     azurerm = {
       source  = "hashicorp/azurerm"
@@ -14,17 +16,6 @@ terraform {
 provider "azurerm" {
   features {}
   use_oidc = true
-}
-
-terraform {
-  backend "azurerm" {
-    resource_group_name  = "gh-tf-storage-rg01"
-    storage_account_name = "rjukstfstgacc01"
-    container_name       = "poc1-tfstate"
-    key                  = "terraform.tfstate"
-    use_oidc             = true
-    use_azuread_auth     = true
-  }
 }
 
 resource "random_pet" "rg_name" {
@@ -44,7 +35,7 @@ variable "resource_group_location" {
 
 variable "resource_group_name_prefix" {
   type        = string
-  default     = "rg"
+  default     = "rgs"
   description = "Prefix of the resource group name combined with a random ID."
 }
 
